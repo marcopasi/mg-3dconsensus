@@ -193,7 +193,6 @@ MutuallyExclusiveRepresentationGroup.prototype.nenable = function(name) {
     /*
      * Enable a group by name
      */
-    console.log("nen", name);
     var i = this.reprList.findIndex(function(repr) {
         return repr.name == name;
     });
