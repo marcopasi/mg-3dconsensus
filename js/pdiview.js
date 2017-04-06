@@ -461,7 +461,9 @@ function horizontal_sequence(sequence, group) {
     // c.append(lins);
     // c.append(revs);
     // return c;
-    var c = $("<table/>").append($("<tr/>"));
+    var a = $("<div/>");
+    var b = $("<table/>")
+    var c = $("<tr/>");
     c.append($("<th/>", {"class":"seq_initial"})
              .append("5'-<br/><br/>3'-"));
     sequence.forEach(function(basepair, i) {
@@ -469,13 +471,28 @@ function horizontal_sequence(sequence, group) {
         revb = _normalize(basepair[1]);
         c.append($("<td/>")
                  .click(function(e) {
-                     group.nenable(basepair[2]);
+                     var tname = basepair[2];
+                     if(group.enabled >= 0 && group.reprList[group.enabled].name == tname) {
+                         group.enable(-1);
+                     }else{
+                         group.nenable(tname);
+                     }
+                     $(this).parent().children().each(function(i, td) {
+                         $(td).toggleClass('active', false);
+                     });
+                     $(this).toggleClass('active');
                  })
                  .append(forb+"<br/>|<br/>"+revb));
     });
     c.append($("<th/>", {"class":"seq_final"})
              .append("-3'<br/><br/>-5'"));
-    return c;
+    b.append(c);
+    // b.append($("<span/>")
+    //         .click(function(e){
+    //             group.enable(-1);
+    //         }).append($("<a/>").append("hide")));
+    a.append(b);
+    return a;
 }
 
 function do_interactions(comp, pairings_file, interactions_file, sequence_file) {
