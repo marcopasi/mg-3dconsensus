@@ -545,7 +545,7 @@ function do_interactions(comp, pairings_file, interactions_file, sequence_file) 
 function _autoView(component, sele, duration) {
     component.stage.animationControls.zoomMove(
         component.getCenter( sele ),
-        component.getZoom( sele ) * 0.65,
+        component.getZoom( sele ) * 0.5,
         duration
     );
 }
