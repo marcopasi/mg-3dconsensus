@@ -473,15 +473,15 @@ function horizontal_sequence(sequence, group) {
         c.append($("<td/>")
                  .click(function(e) {
                      var tname = basepair[2];
+                     $(this).parent().children().each(function(i, td) {
+                         $(td).toggleClass('active', false);
+                     });
                      if(group.enabled >= 0 && group.reprList[group.enabled].name == tname) {
                          group.enable(-1);
                      }else{
                          group.nenable(tname);
+                         $(this).toggleClass('active');
                      }
-                     $(this).parent().children().each(function(i, td) {
-                         $(td).toggleClass('active', false);
-                     });
-                     $(this).toggleClass('active');
                  })
                  .append(forb+"<br/>|<br/>"+revb));
     });
