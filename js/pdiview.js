@@ -154,10 +154,10 @@ function ngl_viewer(AXPATH, BBPATH, CRPATH, PDBPATH, PPATH, IPATH, SPATH) {
                 lc.append(RGdata["Axis"].GUI("axdisplay", true));
             if(RGdata["Backbone"])
                 lc.append(RGdata["Backbone"].GUI("bbdisplay", true));
-            if(RGdata["Groove12"])
-                lc.append(RGdata["Groove12"].GUI("gr1display", false));
-            if(RGdata["Groove21"])
-                lc.append(RGdata["Groove21"].GUI("gr2display", false));
+            if(RGdata["MinorGroove"])
+                lc.append(RGdata["MinorGroove"].GUI("gr1display", false));
+            if(RGdata["MajorGroove"])
+                lc.append(RGdata["MajorGroove"].GUI("gr2display", false));
             if(RGdata["Curvature"])
                 lc.append(RGdata["Curvature"].GUI("crdisplay", true));
             
@@ -336,14 +336,14 @@ function do_bb(comp) {
                                comp.addRepresentation( "licorice", {"colorScheme": "uniform",
                                                                     "colorValue":  Bco,
                                                                     "radius":      BWF})),
-        "Groove12": 
-        new MutuallyExclusiveRepresentationGroup(comp, "Groove12", ":C")
+        "MinorGroove": 
+        new MutuallyExclusiveRepresentationGroup(comp, "MinorGroove", ":C")
             .addRepresentation(null,
                                comp.addRepresentation( "licorice", {"colorScheme": "uniform",
                                                                     "colorValue":  Gcos[0],
                                                                     "radius":      GWF})),
-        "Groove21": 
-        new MutuallyExclusiveRepresentationGroup(comp, "Groove21", ":D")
+        "MajorGroove": 
+        new MutuallyExclusiveRepresentationGroup(comp, "MajorGroove", ":D")
             .addRepresentation(null,
                                comp.addRepresentation( "licorice", {"colorScheme": "uniform",
                                                                     "colorValue":  Gcos[1],
