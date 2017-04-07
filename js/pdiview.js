@@ -241,7 +241,7 @@ function more_GUI_extras() {
     function image() {
         if(isSafari) { // Safari Hack: open window early, otherwise Safari will block it!
             safariwin = window.open();
-            safariwin.document.write("<html><head><link rel='stylesheet' href='/static/style.css'></head><body><h1>Curves+ web server</h1><h3>Thank you for your patience...</h3>Please wait while screenshot is being created. This may take a few seconds...</body></html>")
+            safariwin.document.write("<html><head></head><body><h1>3DConsensus</h1><h3>Thank you for your patience...</h3>Please wait while screenshot is being created. This may take a few seconds...</body></html>")
         }
         var fname = "screenshot.png"
         stage.makeImage({
