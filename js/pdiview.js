@@ -89,6 +89,19 @@ $(document).ready(function(e){
         toggler.slideToggle(500);
         toggle_icon.toggleClass("glyphicon-arrow-right glyphicon-arrow-left")
     });
+    $("#plots").append(
+        $("<a/>",
+          {"data-toggle": "tooltip",
+           "title": "<img src='http://vre.multiscalegenomics.eu/test/marco/img/dna_helical_parameters.png' />"})
+            .css("html","true")
+            .append("Help with DNA helical parameters"));
+    $('a[data-toggle="tooltip"]').tooltip({
+        animated: 'fade',
+        placement: 'top',
+        html: true,
+        container: 'body',
+        selector: ''
+    });
 });
 
 /*************************

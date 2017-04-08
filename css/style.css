@@ -50,3 +50,7 @@ div.colors {font-weight: 700; margin: 5px 0;}
 .cimg {display:inline-block; width: 1.2em; height: 1.2em;}
 .buttons > span {margin-top: 5px;}
 .helpline {font-size: small; padding-left: 15px;}
+
+div.tooltip-inner {
+    max-width: 690px!important;
+}
